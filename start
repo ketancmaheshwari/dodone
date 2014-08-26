@@ -13,7 +13,7 @@ do
        sh todo/$task
        mv todo/$task dirdone
     else
-       echo "Nothing to be done"
+       echo "."
     fi
     sleep 2
 done
