@@ -1,0 +1,19 @@
+#!/bin/bash
+
+#set -x
+
+finish=0
+trap 'finish=1' SIGUSR1
+
+while (( finish != 1 ))
+do
+    task=$(/bin/ls -1 todo/|head -n 1)
+    if [ -f todo/$task ] ; then
+       sh todo/$task
+       #runjob --block $COBALT_PARTNAME --ranks-per-node 1 : todo/$task
+       mv todo/$task dirdone
+    else
+       echo "."
+    fi
+    sleep 2
+done
