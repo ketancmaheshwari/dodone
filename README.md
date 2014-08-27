@@ -45,9 +45,20 @@ file. For example, if my application is "miniFE.x" and arguments are "-nx 10
 
 miniFE.x -nx 10 -ny 20 -nz 30
 
-Download and Usage
-==================
+Usage
+======
 
-Download a current version of dodone like so:
+Initialize directories with reset command:
 
-wget 
+$ reset
+
+Add or link executables to the dirtodo directory.
+
+Add executable parameters/args to config file as shown in previous section.
+
+Start the outer qsub command as shown in startjob:
+
+$ qsub -A ATPESC2014 -n 1 -t 5 --mode script runjob
+
+Make changes to the nodes (-n), walltime (-t) and/or allocation (-A) per your setup and choosing.
+
