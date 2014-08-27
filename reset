@@ -1,4 +1,28 @@
 #!/bin/bash
 
-mv dirdone/*.sh todo/
+rm -f dirdone/*.sh
+
+cat << EOF >> todo/a.sh
+#!/bin/bash
+
+echo hello a
+EOF
+
+cat << EOF >> todo/b.sh
+#!/bin/bash
+
+echo hello b
+EOF
+
+cat << EOF >> todo/c.sh
+#!/bin/bash
+
+echo hello c
+EOF
+
+cat << EOF >> todo/d.sh
+#!/bin/bash
+
+echo hello d
+EOF
 
