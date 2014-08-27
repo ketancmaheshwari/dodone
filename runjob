@@ -8,12 +8,10 @@ trap 'finish=1' SIGUSR1
 while (( finish != 1 ))
 do
     task=$(/bin/ls -1 dirtodo/|head -n 1)
-    taskargs=$(awk -v "r=$var" '{if ($1==r){ $1="";print $0}}' ./config)
+    taskargs=$(awk -v "r=$task" '{if ($1==r){ $1="";print $0}}' ./config)
     if [ -f dirtodo/$task ] ; then
        runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/$task $taskargs
        mv dirtodo/$task dirdone
-    else
-       echo "."
     fi
     sleep 1
 done
