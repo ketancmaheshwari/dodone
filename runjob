@@ -12,7 +12,7 @@ do
     if [ -f dirtodo/$task ] ; then
        runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/$task $taskargs
        mv dirtodo/$task dirdone
-       echo "${task} : done"
+       echo "=== ${task} : Done. ==="
     fi
     sleep 1
 done
