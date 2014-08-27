@@ -1,0 +1,2 @@
+mpicatnap /home/ketan/dodone/in.dat /home/ketan/dodone/out.dat 1
+miniFE.x -nx 10 -ny 20 -nz 30

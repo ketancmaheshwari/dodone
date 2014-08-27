@@ -1,28 +1,31 @@
 #!/bin/bash
 
-rm -f dirdone/*.sh
+mkdir -p dirdone dirtodo
 
-cat << EOF >> todo/a.sh
-#!/bin/bash
-
-echo hello a
-EOF
-
-cat << EOF >> todo/b.sh
-#!/bin/bash
-
-echo hello b
-EOF
-
-cat << EOF >> todo/c.sh
-#!/bin/bash
-
-echo hello c
-EOF
-
-cat << EOF >> todo/d.sh
-#!/bin/bash
-
-echo hello d
-EOF
+mv dirdone/* dirtodo/
+#rm -f dirdone/*.sh
+#
+#cat << EOF >> todo/a.sh
+##!/bin/bash
+#
+#echo hello a
+#EOF
+#
+#cat << EOF >> todo/b.sh
+##!/bin/bash
+#
+#echo hello b
+#EOF
+#
+#cat << EOF >> todo/c.sh
+##!/bin/bash
+#
+#echo hello c
+#EOF
+#
+#cat << EOF >> todo/d.sh
+##!/bin/bash
+#
+#echo hello d
+#EOF
 
