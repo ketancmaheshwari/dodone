@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -x
+#set -x
 
 finish=0
 trap 'finish=1' SIGUSR1
@@ -12,6 +12,7 @@ do
     if [ -f dirtodo/$task ] ; then
        runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/$task $taskargs
        mv dirtodo/$task dirdone
+       echo "${task} : done"
     fi
     sleep 1
 done
