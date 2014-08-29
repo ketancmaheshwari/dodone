@@ -1,8 +1,9 @@
 #!/bin/bash
 
-mkdir -p dirdone/job001/cmd dirdone/job001/indata dirtodo/job001/cmd dirtodo/job001/indata dirrunning
+mkdir -p dirdone/cmd dirdone/indata dirtodo/cmd dirtodo/indata dirrunning
 
-mv dirdone/* dirtodo/
+mv dirdone/cmd/* dirtodo/cmd/
+
 #rm -f dirdone/*.sh
 #
 #cat << EOF >> todo/a.sh

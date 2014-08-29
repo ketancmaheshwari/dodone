@@ -15,5 +15,5 @@ do
     else
        echo "."
     fi
-    sleep 2
+    sleep 1
 done

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+#set args
+
+usage() { echo "Usage: $0 [-f <inputfile>] -e <executable>" 1>&2; exit 1; }
+
+while getopts ":f:e:" o; do
+case "${o}" in
+  f)
+      infile=${OPTARG}
+      ;;
+  e)
+      exec=${OPTARG}
+      ;;
+  *)
+      usage
+      ;;
+esac
+done
+
+
+ln -s $infile dirtodo/data/$infile
+ln -s $exe dirtodo/cmd/
+
