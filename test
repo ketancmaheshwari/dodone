@@ -1,0 +1,21 @@
+#!/bin/bash
+
+chmod -x
+
+echo "Clean and reset"
+./clean && ./reset
+
+echo "start outer"
+./startjob
+
+echo "sleep"
+sleep 5
+
+echo "ksub "
+./ksub -e /home/ketan/MantevoApps/miniFE-2.0_ref/src/miniFE.x
+
+echo "ksub 2"
+./ksub -e /home/ketan/subjoblab/mpicatnap
+
+echo "kstat"
+./kstat
