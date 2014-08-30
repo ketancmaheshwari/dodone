@@ -4,13 +4,14 @@ usage() { echo "Usage: $0 [-f <inputfile>] -e <executable>" 1>&2; exit 1; }
 
 gendirs()
 {
-    export count=$(head -1 .counter 2>/dev/null)
-    if [ "_$count" = "_" ]; then
+    if [ ! -f .counter ]; then
         echo "reset requried"
 	exit 1
     fi
 
-    expr $count + 1 > .counter
+    oldcount=$(head -1 .counter)
+    expr $oldcount + 1 > .counter
+    count=$(head -1 .counter)
     mkdir -p dirtodo/run"$count"/infiles
     mkdir -p dirtodo/run"$count"/cmd
 }

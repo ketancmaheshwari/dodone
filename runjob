@@ -4,6 +4,7 @@
 
 finish=0
 trap 'finish=1' SIGUSR1
+count=$(head -1 .counter)
 mkdir -p dirdone/run$count/cmd
 
 while (( finish != 1 ))
