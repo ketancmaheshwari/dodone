@@ -7,11 +7,15 @@ trap 'finish=1' SIGUSR1
 
 while (( finish != 1 ))
 do
-    task=$(/bin/ls -1 dirtodo/cmd|head -n 1)
+    #grab task
+    task=$(/bin/ls -1 dirtodo/run$count/cmd)
+
+    #grab args from config
     taskargs=$(awk -v "r=$task" '{if ($1==r){ $1="";print $0}}' ./config)
-    if [ -f dirtodo/$task ] ; then
-       runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/cmd/$task $taskargs
-       mv dirtodo/cmd/$task dirdone/cmd/
+    
+    if [ -f dirtodo/run$count/cmd/$task ] ; then
+       runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/run$count/cmd/$task $taskargs
+       mv dirtodo/run$count/cmd/$task dirdone/run$count/cmd/
        echo "=== ${task} : Done. ==="
     fi
     sleep 1

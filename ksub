@@ -4,6 +4,21 @@
 
 usage() { echo "Usage: $0 [-f <inputfile>] -e <executable>" 1>&2; exit 1; }
 
+gendirs()
+{
+    count=$(head -1 .counter)
+    
+    if [ "_$count" = "_" ]; then
+        count=0
+    fi
+
+    export count
+
+    expr $count + 1 > .counter
+    mkdir -p dirtodo/run"$count"/infiles
+    mkdir -p dirtodo/run"$count"/cmd
+}
+
 while getopts ":f:e:" o; do
 case "${o}" in
   f)
@@ -19,6 +34,5 @@ esac
 done
 
 
-ln -s $infile dirtodo/data/$infile
-ln -s $exe dirtodo/cmd/
+ln -s $exe dirtodo/cmd/run$count/cmd/$exe
 
