@@ -2,17 +2,17 @@
 
 echo "== Outer job status =="
 
-qstat -u $(\whoami)
+qstat -u $(\whoami) 2>/dev/null
 
 echo "Current system status is:"
 
 echo "== Running =="
-ls dirrunning/run*/cmd
+ls dirrunning/run*/cmd 2>/dev/null
 
 echo "== ToDo =="
-ls dirtodo/run*/cmd
+ls dirtodo/run*/cmd 2>/dev/null
 
 echo "== Done =="
-ls dirdone/run*/cmd
+ls dirdone/run*/cmd 2>/dev/null
 
 echo ==
