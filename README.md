@@ -47,7 +47,7 @@ Usage
 
 Initialize directories with reset command:
 
-$ reset
+$ ./clean && ./reset
 
 Add or link executables to the dirtodo directory.
 
