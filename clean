@@ -1,4 +1,5 @@
 #!/bin/bash
 
+rm -rf dir*
 rm -rf *.output *.error *.cobaltlog
-
+rm -rf .count*

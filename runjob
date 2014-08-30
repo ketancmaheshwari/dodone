@@ -4,18 +4,19 @@
 
 finish=0
 trap 'finish=1' SIGUSR1
+mkdir -p dirdone/run$count/cmd
 
 while (( finish != 1 ))
 do
     #grab task
-    task=$(/bin/ls -1 dirtodo/run$count/cmd)
+    task=$(/bin/ls -1 ./dirtodo/run$count/cmd 2>/dev/null)
 
     #grab args from config
     taskargs=$(awk -v "r=$task" '{if ($1==r){ $1="";print $0}}' ./config)
     
     if [ -f dirtodo/run$count/cmd/$task ] ; then
-       runjob --block $COBALT_PARTNAME --ranks-per-node 1 : dirtodo/run$count/cmd/$task $taskargs
-       mv dirtodo/run$count/cmd/$task dirdone/run$count/cmd/
+       runjob --block $COBALT_PARTNAME --ranks-per-node 1 : ./dirtodo/run$count/cmd/$task $taskargs
+       mv ./dirtodo/run$count/cmd/$task ./dirdone/run$count/cmd/
        echo "=== ${task} : Done. ==="
     fi
     sleep 1

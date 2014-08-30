@@ -1,8 +1,10 @@
 #!/bin/bash
 
-mkdir -p dirdone/cmd dirdone/indata dirtodo/cmd dirtodo/indata dirrunning
+mkdir -p dirdone dirdone dirtodo dirtodo 
 
-mv dirdone/cmd/* dirtodo/cmd/
+rm -rf dirdone/* 
+
+echo "1">.counter
 
 #rm -f dirdone/*.sh
 #

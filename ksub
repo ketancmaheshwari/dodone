@@ -1,18 +1,14 @@
 #!/bin/bash
 
-#set args
-
 usage() { echo "Usage: $0 [-f <inputfile>] -e <executable>" 1>&2; exit 1; }
 
 gendirs()
 {
-    count=$(head -1 .counter)
-    
+    export count=$(head -1 .counter 2>/dev/null)
     if [ "_$count" = "_" ]; then
-        count=0
+        echo "reset requried"
+	exit 1
     fi
-
-    export count
 
     expr $count + 1 > .counter
     mkdir -p dirtodo/run"$count"/infiles
@@ -33,6 +29,10 @@ case "${o}" in
 esac
 done
 
+gendirs
 
-ln -s $exe dirtodo/cmd/run$count/cmd/$exe
+cd dirtodo/run$count/cmd
 
+ln -s $exec $(basename $exec)
+
+cd -
