@@ -1,5 +1,5 @@
 Introduction
-=============
+-------------
 
 This package contains a simple framework that allows BG users to run multiple
 independent tasks over a single outer qsub scheduler block allocation. The
@@ -8,7 +8,7 @@ any system that supports schedulers such as Cobalt.
 
 
 Motivation
-===========
+-----------
 
 Users often have relatively small but many independent tasks to run over large
 systems such as BG. Submitting independent jobs for these tasks is inconvenient
@@ -23,7 +23,7 @@ is a waste for many independent short tasks.
 The dodone framework addresses the above problems.
 
 Mechanism
-=========
+----------
 
 The core mechanism is as follows: Two directories are maintained: `dirtodo` and
 `dirdone`; `dirtodo` contains the tasks that are needed to be done and
@@ -46,7 +46,7 @@ miniFE.x -nx 10 -ny 20 -nz 30
 ```
 
 Usage
-======
+------
 
 Initialize directories with reset command:
 
