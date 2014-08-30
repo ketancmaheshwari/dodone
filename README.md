@@ -47,7 +47,9 @@ Usage
 
 Initialize directories with reset command:
 
+```bash
 $ ./clean && ./reset
+```
 
 Add or link executables to the dirtodo directory.
 
@@ -55,17 +57,23 @@ Add executable parameters/args to config file as shown in previous section.
 
 Start the outer qsub command as shown in startjob:
 
+```bash
 $ qsub -A ATPESC2014 -n 1 -t 5 --mode script runjob
+```
 
 Make changes to the nodes (-n), walltime (-t) and/or allocation (-A) per your setup and choosing.
 
 Now, to submit your "jobs" to this system, simply invoke ./ksub like so:
 
+```bash
 $ ./ksub -e <executable>
+```
 
 For example:
 
+```bash
 $ ./ksub -e /home/ketan/MantevoApps/miniFE-2.0_ref/src/miniFE.x
+```
 
 This will put the miniFE.x executable in the todo directory and run it on the
 compute node.
