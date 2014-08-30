@@ -80,3 +80,9 @@ $ ./ksub -e /home/ketan/MantevoApps/miniFE-2.0_ref/src/miniFE.x
 
 This will put the `miniFE.x` executable in the todo directory and run it on the
 compute node.
+
+To know the overall status of the system:
+
+```bash
+$ ./kstat
+```

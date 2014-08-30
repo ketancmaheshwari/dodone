@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "== Outer job status =="
+
+qstat -u $(\whoami)
+
 echo "Current system status is:"
 
 echo "== Running =="
