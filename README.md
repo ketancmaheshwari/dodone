@@ -40,7 +40,9 @@ Users can provide arguments to their application by adding a row in the config
 file. For example, if my application is "miniFE.x" and arguments are "-nx 10
 -ny 20 -nz 30", the corresponding line in config will be like so:
 
+```bash
 miniFE.x -nx 10 -ny 20 -nz 30
+```
 
 Usage
 ======
