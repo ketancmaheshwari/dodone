@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Current system status is:"
+
+echo "== Running =="
+ls dirrunning/run*/cmd
+
+echo "== ToDo =="
+ls dirtodo/run*/cmd
+
+echo "== Done =="
+ls dirdone/run*/cmd
+
+echo ==

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-mkdir -p dirdone dirdone dirtodo dirtodo 
+mkdir -p dirdone dirdone dirtodo dirrunning 
 
 rm -rf dirdone/* 
 
