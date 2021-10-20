@@ -1,7 +1,7 @@
 Introduction
 -------------
 
-This package contains a simple framework that allows BG users to run multiple
+This package contains a simple framework that allows users to run multiple
 independent tasks over a single outer qsub scheduler block allocation. The
 current implementation is for the ALCF BlueGene systems but can be extended to
 any system that supports schedulers such as Cobalt.
